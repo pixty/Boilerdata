@@ -19,6 +19,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (nullable id<BLDataEventProcessor>)dataProvider:(id<BLDataProvider>)dataProvider willUpdateWithEvent:(BLDataEvent *)event;
 
+@optional
+
+- (void)dataProvider:(id<BLDataProvider>)dataProvider didUpdateWithEvent:(BLDataEvent *)event;
+
 @end
 
 

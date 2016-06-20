@@ -103,6 +103,10 @@
             callbacks.didUpdateDataBlock();
         }
     } completion:^{
+        if ([self.observer respondsToSelector:@selector(dataProvider:didUpdateWithEvent:)]) {
+            [self.observer dataProvider:self didUpdateWithEvent:event];
+        }
+        
         self.eventProcessorInProgress = nil;
         
         if (callbacks.completionBlock) {
