@@ -20,6 +20,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)updateWithSections:(NSArray<id<BLDataSection>> *)sections updatedItemIds:(nullable NSSet<id<BLDataItemId>> *)updatedItemIds;
 
+- (void)updateWithSections:(NSArray<id<BLDataSection>> *)sections
+            updatedItemIds:(nullable NSSet<id<BLDataItemId>> *)updatedItemIds
+                   context:(nullable NSDictionary *)context;
+
 @end
 
 NS_ASSUME_NONNULL_END

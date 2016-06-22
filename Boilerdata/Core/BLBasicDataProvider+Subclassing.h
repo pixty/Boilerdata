@@ -17,6 +17,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface BLBasicDataProvider (Subclassing)
 
+- (void)updateWithData:(id<BLData>)data updatedItemIds:(nullable NSSet<id<BLDataItemId>> *)updatedItemIds context:(nullable NSDictionary *)context;
+
 - (void)updateWithData:(id<BLData>)data updatedItemIds:(nullable NSSet<id<BLDataItemId>> *)updatedItemIds;
 
 @end

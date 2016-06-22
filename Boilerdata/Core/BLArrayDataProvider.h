@@ -20,6 +20,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)updateWithItems:(NSArray<id<BLDataItem>> *)items updatedItemIds:(nullable NSSet<id<BLDataItemId>> *)updatedItemIds;
 
+- (void)updateWithItems:(NSArray<id<BLDataItem>> *)items
+         updatedItemIds:(nullable NSSet<id<BLDataItemId>> *)updatedItemIds
+                context:(nullable NSDictionary *)context;
+
 @end
 
 

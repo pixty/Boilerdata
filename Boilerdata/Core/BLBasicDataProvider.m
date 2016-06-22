@@ -42,7 +42,7 @@
 
 #pragma mark - Updates
 
-- (void)updateWithData:(id<BLData>)newData updatedItemIds:(NSSet<id<BLDataItemId>> *)precalculatedUpdatedItemIds {
+- (void)updateWithData:(id<BLData>)newData updatedItemIds:(NSSet<id<BLDataItemId>> *)precalculatedUpdatedItemIds context:(NSDictionary *)context {
     [self updateWithBlock:^(__kindof id<BLData> lastQueuedData) {
         NSSet<id<BLDataItemId>> *updatedItemIds =
             precalculatedUpdatedItemIds ?: [self updatedItemIdsForOldData:lastQueuedData newData:newData];
@@ -50,8 +50,12 @@
         [self enqueueDataEvent:[[BLDataEvent alloc] initWithOldData:lastQueuedData
                                                             newData:newData
                                                      updatedItemIds:updatedItemIds
-                                                            context:nil]];
+                                                            context:context]];
     }];
+}
+
+- (void)updateWithData:(id<BLData>)data updatedItemIds:(NSSet<id<BLDataItemId>> *)updatedItemIds {
+    [self updateWithData:data updatedItemIds:updatedItemIds context:nil];
 }
 
 #pragma mark - Private

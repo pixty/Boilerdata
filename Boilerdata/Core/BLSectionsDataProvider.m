@@ -13,12 +13,18 @@
 @implementation BLSectionsDataProvider
 
 - (void)updateWithSections:(NSArray<id<BLDataSection>> *)sections {
-    [self updateWithSections:sections updatedItemIds:nil];
+    [self updateWithSections:sections updatedItemIds:nil context:nil];
 }
 
-- (void)updateWithSections:(NSArray<id<BLDataSection>> *)sections updatedItemIds:(NSSet<id<BLDataItemId>> *)precalculatedUpdatedItemIds {
+- (void)updateWithSections:(NSArray<id<BLDataSection>> *)sections updatedItemIds:(NSSet<id<BLDataItemId>> *)updatedItemIds {
+    [self updateWithSections:sections updatedItemIds:nil context:nil];
+}
+
+- (void)updateWithSections:(NSArray<id<BLDataSection>> *)sections
+            updatedItemIds:(NSSet<id<BLDataItemId>> *)precalculatedUpdatedItemIds
+                   context:(NSDictionary *)context {
     BLSectionsData *newData = [[BLSectionsData alloc] initWithSections:sections];
-    [self updateWithData:newData updatedItemIds:precalculatedUpdatedItemIds];
+    [self updateWithData:newData updatedItemIds:precalculatedUpdatedItemIds context:context];
 }
 
 @end
