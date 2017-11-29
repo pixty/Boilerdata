@@ -35,7 +35,11 @@
 }
 
 - (instancetype)initWithCollectionView:(UICollectionView *)collectionView {
-    return [self initWithEngine:[[BLUICollectionViewReloaderEngine alloc] initWithCollectionView:collectionView]];
+    return [self initWithCollectionView:collectionView shouldAnimate:YES];
+}
+
+- (instancetype)initWithCollectionView:(UICollectionView *)collectionView shouldAnimate:(BOOL)shouldAnimate {
+    return [self initWithEngine:[[BLUICollectionViewReloaderEngine alloc] initWithCollectionView:collectionView shouldAnimate:shouldAnimate]];
 }
 
 - (instancetype)initWithEngine:(id<BLUIKitViewReloaderEngine>)engine {

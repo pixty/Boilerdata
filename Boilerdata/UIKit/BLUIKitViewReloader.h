@@ -32,6 +32,7 @@ typedef void (^BLCellUpdateBlock)(id cell, NSIndexPath *indexPath);
 - (instancetype)initWithTableView:(UITableView *)tableView animations:(nullable BLUITableViewAnimations *)animations;
 
 - (instancetype)initWithCollectionView:(UICollectionView *)collectionView;
+- (instancetype)initWithCollectionView:(UICollectionView *)collectionView shouldAnimate:(BOOL)shouldAnimate;
 
 - (instancetype)init NS_UNAVAILABLE;
 

@@ -13,6 +13,8 @@
 
 @property (nonatomic, strong ,readonly) UICollectionView *collectionView;
 
+@property (nonatomic, assign, readonly) BOOL shouldAnimate;
+
 @property (nonatomic, strong) NNCollectionViewReloader *reloader;
 
 @end
@@ -22,11 +24,12 @@
 
 #pragma mark - Init
 
-- (instancetype)initWithCollectionView:(UICollectionView *)collectionView {
+- (instancetype)initWithCollectionView:(UICollectionView *)collectionView shouldAnimate:(BOOL)shouldAnimate {
     self = [super init];
     if (!self) return nil;
     
     _collectionView = collectionView;
+    _shouldAnimate = shouldAnimate;
     
     return self;
 }
@@ -47,11 +50,19 @@
 - (void)performUpdates:(void (^)(void))updates completion:(void (^)(void))completion {
     self.reloader = [[NNCollectionViewReloader alloc] initWithCollectionView:self.collectionView cellCustomReloadBlock:self.cellUpdateBlock];
     
-    [self.reloader performUpdates:updates completion:^{
-        self.reloader = nil;
-        
-        completion();
-    }];
+    void (^reloadBlock)(void) = ^{
+        [self.reloader performUpdates:updates completion:^{
+            self.reloader = nil;
+            
+            completion();
+        }];
+    };
+    
+    if (self.shouldAnimate) {
+        reloadBlock();
+    } else {
+        [UIView performWithoutAnimation:reloadBlock];
+    }
 }
 
 - (void)insertSections:(NSIndexSet *)sections {
