@@ -18,7 +18,7 @@ typedef void (^BLDataEventProcessorCompletion)(_Nullable id<BLDataDiff> diff) ;
 
 @protocol BLDataEventProcessor <NSObject>
 
-- (void)applyEvent:(BLDataEvent *)event withDataUpdateBlock:(void (^)(void))dataUpdateBlock completion:(nullable BLDataEventProcessorCompletion)completion;
+- (void)applyEvent:(BLDataEvent *)event withDataUpdateBlock:(void (^)(void))dataUpdateBlock completion:(BLDataEventProcessorCompletion)completion;
 
 @end
 
