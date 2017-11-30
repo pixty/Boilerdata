@@ -102,7 +102,7 @@
         if (callbacks.didUpdateDataBlock) {
             callbacks.didUpdateDataBlock();
         }
-    } completion:^{
+    } completion:^(_Nullable id<BLDataDiff> diff) {
         if ([self.observer respondsToSelector:@selector(dataProvider:didUpdateWithEvent:)]) {
             [self.observer dataProvider:self didUpdateWithEvent:event];
         }

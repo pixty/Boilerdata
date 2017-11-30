@@ -63,12 +63,12 @@
 
 #pragma mark - BLDataEventProcessor
 
-- (void)applyEvent:(BLDataEvent *)event withDataUpdateBlock:(void (^)(void))dataUpdateBlock completion:(void (^)(void))completion {
+- (void)applyEvent:(BLDataEvent *)event withDataUpdateBlock:(void (^)(void))dataUpdateBlock completion:(nullable BLDataEventProcessorCompletion)completion {
     if ([self shouldUseReloadDataForEvent:event]) {
         dataUpdateBlock();
         // TODO: we need a callback here
         [self.engine reloadData];
-        completion();
+        completion(nil);
         return;
     }
     
@@ -80,7 +80,7 @@
     
     if ([self isDataDiffEmpty:dataDiff]) {
         dataUpdateBlock();
-        completion();
+        completion(nil);
         return;
     }
     
@@ -123,12 +123,12 @@
         }
     } completion:^{
         if (self.waitForAnimationCompletion) {
-            completion();
+            completion(dataDiff);
         }
     }];
         
     if (!self.waitForAnimationCompletion) {
-        completion();
+        completion(dataDiff);
     }
 }
 

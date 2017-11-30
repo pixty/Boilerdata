@@ -9,13 +9,16 @@
 #import <Foundation/Foundation.h>
 
 @class BLDataEvent;
+@protocol BLDataDiff;
 
 NS_ASSUME_NONNULL_BEGIN
 
 
+typedef void (^BLDataEventProcessorCompletion)(_Nullable id<BLDataDiff> diff) ;
+
 @protocol BLDataEventProcessor <NSObject>
 
-- (void)applyEvent:(BLDataEvent *)event withDataUpdateBlock:(void (^)(void))dataUpdateBlock completion:(void (^)(void))completion;
+- (void)applyEvent:(BLDataEvent *)event withDataUpdateBlock:(void (^)(void))dataUpdateBlock completion:(nullable BLDataEventProcessorCompletion)completion;
 
 @end
 

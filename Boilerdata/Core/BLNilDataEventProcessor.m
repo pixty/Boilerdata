@@ -19,9 +19,9 @@
     return instance;
 }
 
-- (void)applyEvent:(BLDataEvent *)event withDataUpdateBlock:(void (^)(void))dataUpdateBlock completion:(void (^)(void))completion {
+- (void)applyEvent:(BLDataEvent *)event withDataUpdateBlock:(void (^)(void))dataUpdateBlock completion:(nullable BLDataEventProcessorCompletion)completion {
     dataUpdateBlock();
-    completion();
+    completion(nil);
 }
 
 @end
