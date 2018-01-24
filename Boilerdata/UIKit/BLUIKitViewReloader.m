@@ -8,6 +8,7 @@
 
 #import "BLUIKitViewReloader.h"
 #import "BLUITableViewReloaderEngine.h"
+#import "BLUITableViewAnimations.h"
 #import "BLUICollectionViewReloaderEngine.h"
 #import "BLDataEvent.h"
 #import "BLDataItem.h"
@@ -27,7 +28,7 @@
 #pragma mark - Init
 
 - (instancetype)initWithTableView:(UITableView *)tableView {
-    return [self initWithTableView:tableView animations:nil];
+    return [self initWithTableView:tableView animations:[[BLUITableViewAnimations alloc] init]];
 }
 
 - (instancetype)initWithTableView:(UITableView *)tableView animations:(BLUITableViewAnimations *)animations {

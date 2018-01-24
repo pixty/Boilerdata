@@ -61,7 +61,10 @@
     if (self.shouldAnimate) {
         reloadBlock();
     } else {
+        BOOL actionsDisabled = [CATransaction disableActions];
+        [CATransaction setDisableActions:YES];
         [UIView performWithoutAnimation:reloadBlock];
+        [CATransaction setDisableActions:actionsDisabled];
     }
 }
 

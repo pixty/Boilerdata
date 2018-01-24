@@ -14,6 +14,7 @@
 
 @property (nonatomic, strong, readonly) UITableView *tableView;
 @property (nonatomic, strong, readonly) BLUITableViewAnimations *animations;
+@property (nonatomic, assign, readonly) BOOL shouldAnimate;
 
 @property (nonatomic, strong) NNTableViewReloader *reloader;
 
@@ -30,7 +31,8 @@
     if (!self) return nil;
     
     _tableView = tableView;
-    _animations = animations ?: [[BLUITableViewAnimations alloc] init];
+    _animations = animations ?: [BLUITableViewAnimations withAnimation:UITableViewRowAnimationNone];
+    _shouldAnimate = animations != nil;
     
     return self;
 }
@@ -51,11 +53,22 @@
 - (void)performUpdates:(void (^)(void))updates completion:(void (^)(void))completion {
     self.reloader = [[NNTableViewReloader alloc] initWithTableView:self.tableView cellCustomReloadBlock:self.cellUpdateBlock];
     
-    [self.reloader performUpdates:updates completion:^{
-        self.reloader = nil;
-        
-        completion();
-    }];
+    void (^reloadBlock)(void) = ^{
+        [self.reloader performUpdates:updates completion:^{
+            self.reloader = nil;
+            
+            completion();
+        }];
+    };
+    
+    if (self.shouldAnimate) {
+        reloadBlock();
+    } else {
+        BOOL actionsDisabled = [CATransaction disableActions];
+        [CATransaction setDisableActions:YES];
+        [UIView performWithoutAnimation:reloadBlock];
+        [CATransaction setDisableActions:actionsDisabled];
+    }
 }
 
 - (void)insertSections:(NSIndexSet *)sections {
