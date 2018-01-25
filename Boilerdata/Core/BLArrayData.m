@@ -38,7 +38,8 @@
 }
 
 - (id<BLDataItem>)itemAtIndexPath:(NSIndexPath *)indexPath {
-    return self.items[indexPath.bl_row];
+    NSParameterAssert(indexPath.bl_row < self.items.count);    
+    return indexPath.bl_row < self.items.count ? self.items[indexPath.bl_row] : nil;
 }
 
 - (NSIndexPath *)indexPathForItemWithId:(id<BLDataItemId>)itemId {

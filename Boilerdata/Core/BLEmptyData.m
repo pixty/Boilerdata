@@ -32,7 +32,7 @@
 }
 
 - (id<BLDataItem>)itemAtIndexPath:(NSIndexPath *)indexPath {
-    [NSException raise:NSInternalInconsistencyException format:@"BLEmptyData itemAtIndexPath: is called, it makes no sense"];
+    NSAssert(NO, @"BLEmptyData itemAtIndexPath: is called, it makes no sense");
     return nil;
 }
 
