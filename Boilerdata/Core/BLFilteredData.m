@@ -7,8 +7,9 @@
 //
 
 #import "BLFilteredData.h"
-#import "BLDataItemFilter.h"
 #import "BLDataItem.h"
+#import "BLDataItemFilter.h"
+#import "BLDataUtils.h"
 #import "NSIndexPath+BLUtils.h"
 
 @interface BLFilteredData ()
@@ -135,6 +136,12 @@
     
     NSOrderedSet<NSIndexPath *> *originalIndexPaths = self.filteredSections[mappedIndexPath.bl_section];
     return originalIndexPaths[mappedIndexPath.bl_row];
+}
+
+#pragma mark - NSObject
+
+- (NSString *)description {
+    return [BLDataUtils(self) description];
 }
 
 @end

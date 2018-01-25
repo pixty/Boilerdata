@@ -7,6 +7,7 @@
 //
 
 #import "BLProxyData.h"
+#import "BLDataUtils.h"
 
 @implementation BLProxyData
 
@@ -63,6 +64,12 @@
 
 - (id)forwardingTargetForSelector:(SEL)aSelector {
     return _originalData;
+}
+
+#pragma mark - NSObject
+
+- (NSString *)description {
+    return [BLDataUtils(self) description];
 }
 
 @end

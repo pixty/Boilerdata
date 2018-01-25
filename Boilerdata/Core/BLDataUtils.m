@@ -106,4 +106,19 @@ _BLDataUtils *BLDataUtils(id<BLData> data) {
     }
 }
 
+#pragma mark - NSObject
+
+- (NSString *)description {
+    NSMutableString *description = [NSMutableString stringWithFormat:@"<BLData: %p>", self.data];
+    [description appendString:@" {\n"];
+    for (NSInteger i = 0; i < [self.data numberOfSections]; ++i) {
+        [description appendFormat:@"    section %@: %@ items\n", @(i), @([self.data numberOfItemsInSection:i])];
+    }
+    if ([self.data numberOfSections] == 0) {
+        [description appendFormat:@"    empty\n"];
+    }
+    [description appendString:@"}"];
+    return [description copy];
+}
+
 @end

@@ -8,6 +8,7 @@
 
 #import "BLArrayData.h"
 #import "BLDataItem.h"
+#import "BLDataUtils.h"
 #import "NSIndexPath+BLUtils.h"
 
 @implementation BLArrayData
@@ -55,6 +56,12 @@
     }];
     
     return result;
+}
+
+#pragma mark - NSObject
+
+- (NSString *)description {
+    return [BLDataUtils(self) description];
 }
 
 @end

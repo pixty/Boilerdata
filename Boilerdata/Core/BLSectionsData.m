@@ -7,8 +7,9 @@
 //
 
 #import "BLSectionsData.h"
-#import "BLDataSection.h"
 #import "BLDataItem.h"
+#import "BLDataSection.h"
+#import "BLDataUtils.h"
 #import "NSIndexPath+BLUtils.h"
 
 @implementation BLSectionsData
@@ -69,6 +70,12 @@
 
 - (id<BLSectionItem>)itemForSection:(NSInteger)section {
     return self.sections[section].sectionItem;
+}
+
+#pragma mark - NSObject
+
+- (NSString *)description {
+    return [BLDataUtils(self) description];
 }
 
 @end

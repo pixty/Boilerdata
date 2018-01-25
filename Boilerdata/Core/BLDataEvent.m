@@ -39,4 +39,17 @@
     return instance;
 }
 
+#pragma mark - NSObject
+
+- (NSString *)description {
+    NSMutableString *description = [NSMutableString stringWithString:[super description]];
+    [description appendString:@" {\n"];
+    [description appendFormat:@"  oldData: %@\n", self.oldData];
+    [description appendFormat:@"  newData: %@\n", self.newData];
+    [description appendFormat:@"  updatedItemIds: %@\n", self.updatedItemIds.count > 0 ? self.updatedItemIds : @"empty"];
+    [description appendFormat:@"  context: %@\n", self.context.count > 0 ? self.context : @"empty"];
+    [description appendString:@"}"];
+    return [description copy];
+}
+
 @end
