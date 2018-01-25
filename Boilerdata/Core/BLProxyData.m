@@ -61,4 +61,8 @@
     }
 }
 
+- (id)forwardingTargetForSelector:(SEL)aSelector {
+    return _originalData;
+}
+
 @end
