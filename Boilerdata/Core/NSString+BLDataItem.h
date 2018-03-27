@@ -7,8 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <Boilerdata/Boilerdata.h>
+#import "BLDataItem.h"
 
-@interface NSString (BLDataItem) <BLDataItem, BLDataItemId, BLSectionItem>
+@interface NSString (BLDataItem) <BLDataItem, BLDataItemId>
 
 @end

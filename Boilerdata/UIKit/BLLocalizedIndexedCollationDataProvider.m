@@ -10,19 +10,19 @@
 #import "BLChainDataProvider+Subclassing.h"
 #import "BLLocalizedIndexedCollationData.h"
 #import "BLDataEvent.h"
-#import "NSString+BLSectionItem.h"
+#import "NSString+BLDataItem.h"
 
 @implementation BLLocalizedIndexedCollationDataProvider
 
 - (instancetype)initWithDataProvider:(id<BLDataProvider>)dataProvider stringifierBlock:(BLDataItemStringifierBlock)stringifierBlock {
     UILocalizedIndexedCollation *collation = [UILocalizedIndexedCollation currentCollation];
     
-    return [super initWithDataProvider:dataProvider classificationBlock:^id<BLSectionItem>(id<BLDataItem> dataItem) {
+    return [super initWithDataProvider:dataProvider classificationBlock:^id<BLDataItem>(id<BLDataItem> dataItem) {
         NSString *string = stringifierBlock(dataItem);
         NSUInteger sectionIndex = [collation sectionForObject:string collationStringSelector:@selector(self)];
         return [collation.sectionTitles objectAtIndex:sectionIndex];
         
-    } sectionSortingBlock:^NSArray<id<BLSectionItem>> *(NSArray<id<BLSectionItem>> *sectionItems) {
+    } sectionSortingBlock:^NSArray<id<BLDataItem>> *(NSArray<id<BLDataItem>> *sectionItems) {
         NSOrderedSet<NSString *> *collationTitles = [NSOrderedSet orderedSetWithArray:collation.sectionTitles];
         
         return [sectionItems sortedArrayUsingComparator:^NSComparisonResult(NSString *obj1, NSString *obj2) {

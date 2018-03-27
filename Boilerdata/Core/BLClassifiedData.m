@@ -8,7 +8,6 @@
 
 #import "BLClassifiedData.h"
 #import "BLDataItem.h"
-#import "BLSectionItem.h"
 #import "BLSectionsData.h"
 #import "BLDataSection.h"
 #import "BLDataUtils.h"
@@ -47,28 +46,28 @@
                                       sectionSortingBlock:(BLSectionItemSortingBlock)sectionSortingBlock {
     // TODO: assert that original data only has 0 or 1 section
     
-    NSMutableOrderedSet<id<BLSectionItem>> *sectionItems = [NSMutableOrderedSet orderedSet];
-    NSMutableDictionary<id<BLSectionItem>, NSMutableArray<id<BLDataItem>> *> *classifiedItems = [NSMutableDictionary dictionary];
+    NSMutableOrderedSet<id<BLDataItem>> *sectionItems = [NSMutableOrderedSet orderedSet];
+    NSMutableDictionary<id<BLDataItemId>, NSMutableArray<id<BLDataItem>> *> *classifiedItems = [NSMutableDictionary dictionary];
     
     [BLDataUtils(originalData) enumerateItemsWithBlock:^(id<BLDataItem> item, NSIndexPath *indexPath, BOOL *stop) {
-        id<BLSectionItem> sectionItem = classificationBlock(item);
+        id<BLDataItem> sectionItem = classificationBlock(item);
         [sectionItems addObject:sectionItem];
         
-        NSMutableArray<id<BLDataItem>> *items = classifiedItems[sectionItem];
+        NSMutableArray<id<BLDataItem>> *items = classifiedItems[sectionItem.itemId];
         if (!items) {
             items = [NSMutableArray array];
-            classifiedItems[sectionItem] = items;
+            classifiedItems[sectionItem.itemId] = items;
         }
         
         [items addObject:item];
     }];
     
-    NSArray<id<BLSectionItem>> *sortedSectionItems = [self sortSectionItems:sectionItems.array withBlock:sectionSortingBlock];
+    NSArray<id<BLDataItem>> *sortedSectionItems = [self sortSectionItems:sectionItems.array withBlock:sectionSortingBlock];
     
     NSMutableArray<id<BLDataSection>> *sections = [NSMutableArray arrayWithCapacity:sectionItems.count];
     
-    for (id<BLSectionItem> sectionItem in sortedSectionItems) {
-        id<BLDataSection> section = [[BLDataSection alloc] initWithItems:classifiedItems[sectionItem]
+    for (id<BLDataItem> sectionItem in sortedSectionItems) {
+        id<BLDataSection> section = [[BLDataSection alloc] initWithItems:classifiedItems[sectionItem.itemId]
                                                              sectionItem:sectionItem];
         [sections addObject:section];
     }
@@ -76,13 +75,13 @@
     return [[BLSectionsData alloc] initWithSections:sections];
 }
 
-- (NSArray<id<BLSectionItem>> *)sortSectionItems:(NSArray<id<BLSectionItem>> *)sectionItems
-                                       withBlock:(BLSectionItemSortingBlock)block {
+- (NSArray<id<BLDataItem>> *)sortSectionItems:(NSArray<id<BLDataItem>> *)sectionItems
+                                    withBlock:(BLSectionItemSortingBlock)block {
     if (!block) {
         return sectionItems;
     }
     
-    NSArray<id<BLSectionItem>> *sortedSectionItems = block(sectionItems);
+    NSArray<id<BLDataItem>> *sortedSectionItems = block(sectionItems);
     // TODO: check that all items are present
     
     return sortedSectionItems;

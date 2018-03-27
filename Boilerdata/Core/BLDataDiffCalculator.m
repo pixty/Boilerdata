@@ -144,8 +144,8 @@
     return diff;
 }
 
-+ (id<BLDataDiff>)sectionDiffForSectionItemsBefore:(NSArray<id<BLSectionItem>> *)sectionItemsBefore
-                                 sectionItemsAfter:(NSArray<id<BLSectionItem>> *)sectionItemsAfter {
++ (id<BLDataDiff>)sectionDiffForSectionItemsBefore:(NSArray<id<BLDataItem>> *)sectionItemsBefore
+                                 sectionItemsAfter:(NSArray<id<BLDataItem>> *)sectionItemsAfter {
     NNArrayDiffCalculator *calculator = [[NNArrayDiffCalculator alloc] init];
     return [calculator calculateDiffForObjectsBefore:sectionItemsBefore andAfter:sectionItemsAfter];
 }

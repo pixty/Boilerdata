@@ -9,14 +9,13 @@
 #import "BLChainDataProvider.h"
 
 @protocol BLDataItem;
-@protocol BLSectionItem;
 
 NS_ASSUME_NONNULL_BEGIN
 
 
-typedef id<BLSectionItem> _Nonnull (^BLDataItemClassificationBlock)(id<BLDataItem> dataItem);
+typedef id<BLDataItem> _Nonnull (^BLDataItemClassificationBlock)(id<BLDataItem> dataItem);
 
-typedef NSArray<id<BLSectionItem>> * _Nonnull (^BLSectionItemSortingBlock)(NSArray<id<BLSectionItem>> *sectionItems);
+typedef NSArray<id<BLDataItem>> * _Nonnull (^BLSectionItemSortingBlock)(NSArray<id<BLDataItem>> *sectionItems);
 
 
 @interface BLClassificationDataProvider : BLChainDataProvider

@@ -11,7 +11,6 @@
 @protocol BLDataDiff;
 @protocol BLData;
 @protocol BLDataItem;
-@protocol BLSectionItem;
 @protocol BLDataSection;
 @protocol BLIndexPathMapping;
 
@@ -54,8 +53,8 @@ typedef BOOL (^BLDataItemUpdatedBlock)(id<BLDataItem> itemBefore, id<BLDataItem>
                                                     mappedDataAfter:(id<BLData, BLIndexPathMapping>)mappedDataAfter;
 
 
-+ (id<BLDataDiff>)sectionDiffForSectionItemsBefore:(NSArray<id<BLSectionItem>> *)sectionItemsBefore
-                                 sectionItemsAfter:(NSArray<id<BLSectionItem>> *)sectionItemsAfter;
++ (id<BLDataDiff>)sectionDiffForSectionItemsBefore:(NSArray<id<BLDataItem>> *)sectionItemsBefore
+                                 sectionItemsAfter:(NSArray<id<BLDataItem>> *)sectionItemsAfter;
 
 @end
 

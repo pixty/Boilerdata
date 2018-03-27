@@ -15,7 +15,6 @@
 		01B6970D1C753D8600B9AD6E /* Boilerdata.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 01B6970A1C753D8300B9AD6E /* Boilerdata.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		01B697101C753D8E00B9AD6E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01B6970F1C753D8E00B9AD6E /* libPods.a */; };
 		01B697131C753E8A00B9AD6E /* BLFilterDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B697121C753E8A00B9AD6E /* BLFilterDemoViewController.m */; };
-		01B697161C7541C200B9AD6E /* NSString+BLDataItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B697151C7541C200B9AD6E /* NSString+BLDataItem.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -44,8 +43,6 @@
 		01B6970F1C753D8E00B9AD6E /* libPods.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPods.a; path = "/Users/nick/Development/Gold/Boilerdata/Pods/../build/Debug-iphoneos/libPods.a"; sourceTree = "<absolute>"; };
 		01B697111C753E8A00B9AD6E /* BLFilterDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLFilterDemoViewController.h; sourceTree = "<group>"; };
 		01B697121C753E8A00B9AD6E /* BLFilterDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLFilterDemoViewController.m; sourceTree = "<group>"; };
-		01B697141C7541C200B9AD6E /* NSString+BLDataItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+BLDataItem.h"; sourceTree = "<group>"; };
-		01B697151C7541C200B9AD6E /* NSString+BLDataItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+BLDataItem.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,8 +82,6 @@
 				01B696EF1C753C2900B9AD6E /* AppDelegate.m */,
 				01B697111C753E8A00B9AD6E /* BLFilterDemoViewController.h */,
 				01B697121C753E8A00B9AD6E /* BLFilterDemoViewController.m */,
-				01B697141C7541C200B9AD6E /* NSString+BLDataItem.h */,
-				01B697151C7541C200B9AD6E /* NSString+BLDataItem.m */,
 				01B696F71C753C2900B9AD6E /* Assets.xcassets */,
 				01B696F91C753C2900B9AD6E /* LaunchScreen.storyboard */,
 				01B696FC1C753C2900B9AD6E /* Info.plist */,
@@ -185,7 +180,6 @@
 			files = (
 				01B696F01C753C2900B9AD6E /* AppDelegate.m in Sources */,
 				01B696ED1C753C2900B9AD6E /* main.m in Sources */,
-				01B697161C7541C200B9AD6E /* NSString+BLDataItem.m in Sources */,
 				01B697131C753E8A00B9AD6E /* BLFilterDemoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

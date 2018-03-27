@@ -68,7 +68,7 @@
     return nil;
 }
 
-- (id<BLSectionItem>)itemForSection:(NSInteger)section {
+- (id<BLDataItem>)itemForSection:(NSInteger)section {
     return self.sections[section].sectionItem;
 }
 

@@ -10,7 +10,6 @@
 
 @protocol BLDataItem;
 @protocol BLDataItemId;
-@protocol BLSectionItem;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -29,7 +28,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @optional
 
-- (nullable id<BLSectionItem>)itemForSection:(NSInteger)section;
+- (nullable id<BLDataItem>)itemForSection:(NSInteger)section;
 
 - (NSArray<NSString *> *)sectionIndexTitles;
 - (NSInteger)sectionForSectionIndexTitleAtIndex:(NSInteger)index;

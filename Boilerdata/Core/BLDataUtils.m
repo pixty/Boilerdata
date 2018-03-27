@@ -78,9 +78,9 @@ _BLDataUtils *BLDataUtils(id<BLData> data) {
     return items;
 }
 
-- (NSArray<id<BLSectionItem>> *)sectionItems {
+- (NSArray<id<BLDataItem>> *)sectionItems {
     NSInteger numberOfSections = [self.data numberOfSections];
-    NSMutableArray<id<BLSectionItem>> *items = [NSMutableArray arrayWithCapacity:numberOfSections];
+    NSMutableArray<id<BLDataItem>> *items = [NSMutableArray arrayWithCapacity:numberOfSections];
     
     for (NSInteger section = 0; section < numberOfSections; ++section) {
         [items addObject:[self.data itemForSection:section]];

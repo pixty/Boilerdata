@@ -7,12 +7,12 @@
 //
 
 #import "BLLocalizedIndexedCollationData.h"
-#import "NSString+BLSectionItem.h"
+#import "NSString+BLDataItem.h"
 
 @interface BLLocalizedIndexedCollationData ()
 
 @property (nonatomic, strong, readonly) UILocalizedIndexedCollation *collation;
-@property (nonatomic, copy, readonly) NSArray<id<BLSectionItem>> *sections;
+@property (nonatomic, copy, readonly) NSArray<id<BLDataItem>> *sections;
 
 @end
 
@@ -28,11 +28,11 @@
     return self;
 }
 
-- (NSArray<id<BLSectionItem>> *)availableSections {
+- (NSArray<id<BLDataItem>> *)availableSections {
     NSMutableArray *mutableSections = [NSMutableArray array];
     
     for (NSInteger idx = 0; idx < [self.originalData numberOfSections]; ++idx) {
-        id<BLSectionItem> section = [self.originalData itemForSection:idx];
+        id<BLDataItem> section = [self.originalData itemForSection:idx];
         [mutableSections addObject:section];
     }
     return [mutableSections copy];
