@@ -50,7 +50,7 @@
     NSMutableDictionary<id<BLDataItemId>, NSMutableArray<id<BLDataItem>> *> *classifiedItems = [NSMutableDictionary dictionary];
     
     [BLDataUtils(originalData) enumerateItemsWithBlock:^(id<BLDataItem> item, NSIndexPath *indexPath, BOOL *stop) {
-        id<BLDataItem> sectionItem = classificationBlock(item);
+        id<BLDataItem> sectionItem = classificationBlock(item, indexPath);
         [sectionItems addObject:sectionItem];
         
         NSMutableArray<id<BLDataItem>> *items = classifiedItems[sectionItem.itemId];

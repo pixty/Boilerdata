@@ -13,7 +13,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 
-typedef id<BLDataItem> _Nonnull (^BLDataItemClassificationBlock)(id<BLDataItem> dataItem);
+typedef id<BLDataItem> _Nonnull (^BLDataItemClassificationBlock)(id<BLDataItem> dataItem, NSIndexPath *indexPath);
 
 typedef NSArray<id<BLDataItem>> * _Nonnull (^BLSectionItemSortingBlock)(NSArray<id<BLDataItem>> *sectionItems);
 

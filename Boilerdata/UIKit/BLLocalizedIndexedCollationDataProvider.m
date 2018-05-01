@@ -17,7 +17,7 @@
 - (instancetype)initWithDataProvider:(id<BLDataProvider>)dataProvider stringifierBlock:(BLDataItemStringifierBlock)stringifierBlock {
     UILocalizedIndexedCollation *collation = [UILocalizedIndexedCollation currentCollation];
     
-    return [super initWithDataProvider:dataProvider classificationBlock:^id<BLDataItem>(id<BLDataItem> dataItem) {
+    return [super initWithDataProvider:dataProvider classificationBlock:^id<BLDataItem>(id<BLDataItem> dataItem, NSIndexPath *indexPath) {
         NSString *string = stringifierBlock(dataItem);
         NSUInteger sectionIndex = [collation sectionForObject:string collationStringSelector:@selector(self)];
         return [collation.sectionTitles objectAtIndex:sectionIndex];
