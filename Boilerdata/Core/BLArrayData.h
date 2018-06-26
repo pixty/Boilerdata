@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface BLArrayData : NSObject <BLData>
 
-@property (nonatomic, copy, readonly) NSArray<id<BLDataItem>> *items;
+@property (nonatomic, copy, readonly) NSArray<__kindof id<BLDataItem>> *items;
 
 - (instancetype)initWithItems:(nullable NSArray<id<BLDataItem>> *)items NS_DESIGNATED_INITIALIZER;
 

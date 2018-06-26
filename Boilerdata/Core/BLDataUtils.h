@@ -15,7 +15,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 
-typedef void (^BLDataItemEnumerationBlock)(id<BLDataItem> item, NSIndexPath *indexPath, BOOL *stop);
+typedef void (^BLDataItemEnumerationBlock)(__kindof id<BLDataItem> item, NSIndexPath *indexPath, BOOL *stop);
 
 
 @interface _BLDataUtils : NSObject
@@ -24,11 +24,11 @@ typedef void (^BLDataItemEnumerationBlock)(id<BLDataItem> item, NSIndexPath *ind
 
 - (NSInteger)numberOfItems;
 
-- (NSArray<id<BLDataItem>> *)itemsInSection:(NSInteger)section;
+- (NSArray<__kindof id<BLDataItem>> *)itemsInSection:(NSInteger)section;
 
-- (NSDictionary<id<BLDataItemId>, id<BLDataItem>> *)itemsById;
+- (NSDictionary<id<BLDataItemId>, __kindof id<BLDataItem>> *)itemsById;
 
-- (NSArray<id<BLDataItem>> *)sectionItems;
+- (NSArray<__kindof id<BLDataItem>> *)sectionItems;
 
 - (void)enumerateItemsWithBlock:(BLDataItemEnumerationBlock)block;
 

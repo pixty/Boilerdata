@@ -22,13 +22,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (NSInteger)numberOfItemsInSection:(NSInteger)section;
 
-- (nullable id<BLDataItem>)itemAtIndexPath:(NSIndexPath *)indexPath;
+- (nullable __kindof id<BLDataItem>)itemAtIndexPath:(NSIndexPath *)indexPath;
 - (nullable NSIndexPath *)indexPathForItemWithId:(id<BLDataItemId>)itemId;
 
 
 @optional
 
-- (nullable id<BLDataItem>)itemForSection:(NSInteger)section;
+- (nullable __kindof id<BLDataItem>)itemForSection:(NSInteger)section;
 
 - (NSArray<NSString *> *)sectionIndexTitles;
 - (NSInteger)sectionForSectionIndexTitleAtIndex:(NSInteger)index;

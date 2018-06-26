@@ -15,9 +15,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @protocol BLDataSection <NSObject>
 
-@property (nonatomic, readonly) NSArray<id<BLDataItem>> *items;
+@property (nonatomic, readonly) NSArray<__kindof id<BLDataItem>> *items;
 
-@property (nonatomic, nullable, readonly) id<BLDataItem> sectionItem;
+@property (nonatomic, nullable, readonly) __kindof id<BLDataItem> sectionItem;
 
 @end
 
