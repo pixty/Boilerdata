@@ -14,7 +14,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 
-typedef void (^BLDataEventProcessorCompletion)(_Nullable id<BLDataDiff> diff) ;
+typedef void (^BLDataEventProcessorCompletion)(_Nullable id<BLDataDiff> diff);
 
 @protocol BLDataEventProcessor <NSObject>
 
