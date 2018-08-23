@@ -49,6 +49,17 @@
 @synthesize observer = _observer;
 @synthesize locked = _locked;
 
+- (void)setLocked:(BOOL)locked {
+    if (_locked == locked) {
+        return;
+    }
+    _locked = locked;
+
+    if (!locked) {
+        [self dequeueEventIfPossible];
+    }
+}
+
 #pragma mark - Protected
 
 - (void)updateWithBlock:(void (^)(__kindof id<BLData> lastQueuedData))block {
