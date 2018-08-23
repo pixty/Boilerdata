@@ -40,11 +40,8 @@
 }
 
 - (id<BLDataItem>)itemAtIndexPath:(NSIndexPath *)indexPath {
-    BOOL (^validateIndexPath)(NSArray<id<BLDataSection>> *) = ^BOOL (NSArray<id<BLDataSection>> *sections) {
-        return indexPath.bl_section < sections.count && indexPath.bl_row < sections[indexPath.bl_section].items.count;
-    };
-    NSParameterAssert(validateIndexPath(self.sections));
-    return validateIndexPath(self.sections) ? self.sections[indexPath.bl_section].items[indexPath.bl_row] : nil;
+    NSParameterAssert([self validateIndexPath:indexPath]);
+    return [self validateIndexPath:indexPath] ? self.sections[indexPath.bl_section].items[indexPath.bl_row] : nil;
 }
 
 - (NSIndexPath *)indexPathForItemWithId:(id<BLDataItemId>)itemId {
@@ -70,6 +67,11 @@
 
 - (id<BLDataItem>)itemForSection:(NSInteger)section {
     return self.sections[section].sectionItem;
+
+#pragma mark - Private
+
+- (BOOL)validateIndexPath:(NSIndexPath *)indexPath {
+    return indexPath.bl_section < self.sections.count && indexPath.bl_row < self.sections[indexPath.bl_section].items.count;
 }
 
 #pragma mark - NSObject
