@@ -66,12 +66,18 @@
 }
 
 - (id<BLDataItem>)itemForSection:(NSInteger)section {
-    return self.sections[section].sectionItem;
+    NSParameterAssert([self validateSection:section]);
+    return [self validateSection:section] ? self.sections[section].sectionItem : nil;
+}
 
 #pragma mark - Private
 
 - (BOOL)validateIndexPath:(NSIndexPath *)indexPath {
     return indexPath.bl_section < self.sections.count && indexPath.bl_row < self.sections[indexPath.bl_section].items.count;
+}
+
+- (BOOL)validateSection:(NSInteger)section {
+    return section >= 0 && section < self.sections.count;
 }
 
 #pragma mark - NSObject
