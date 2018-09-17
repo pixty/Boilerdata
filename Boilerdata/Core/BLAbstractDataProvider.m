@@ -22,6 +22,9 @@
 @property (nonatomic, strong, readonly) NSMutableArray<BLDataEvent *> *eventQueue;
 @property (nonatomic, strong, readonly) NSMutableArray<BLDataEventCallbacks *> *eventCallbacksQueue;
 
+@property (nonatomic, copy, readonly) NSMutableDictionary<id, BLDataProviderListenerBlock> *willUpdateListeners;
+@property (nonatomic, copy, readonly) NSMutableDictionary<id, BLDataProviderListenerBlock> *didUpdateListeners;
+
 @property (nonatomic, strong) id<BLDataEventProcessor> eventProcessorInProgress;
 
 @end
@@ -37,6 +40,9 @@
 
     _eventQueue = [NSMutableArray array];
     _eventCallbacksQueue = [NSMutableArray array];
+    
+    _willUpdateListeners = [NSMutableDictionary dictionary];
+    _didUpdateListeners = [NSMutableDictionary dictionary];
     
     [self enqueueDataEventWithInitialData];
     
@@ -58,6 +64,25 @@
     if (!locked) {
         [self dequeueEventIfPossible];
     }
+}
+
+static NSUInteger counter = 0;
+
+- (id)addWillUpdateListener:(BLDataProviderListenerBlock)listener {
+    NSNumber *token = @(++counter);
+    self.willUpdateListeners[token] = listener;
+    return token;
+}
+
+- (id)addDidUpdateListener:(BLDataProviderListenerBlock)listener {
+    NSNumber *token = @(++counter);
+    self.didUpdateListeners[token] = listener;
+    return token;
+}
+
+- (void)removeListenerWithToken:(id)token {
+    self.willUpdateListeners[token] = nil;
+    self.didUpdateListeners[token] = nil;
 }
 
 #pragma mark - Protected
@@ -113,6 +138,9 @@
         if (callbacks.didUpdateDataBlock) {
             callbacks.didUpdateDataBlock();
         }
+        
+        [self callListenersWithEvent:event willUpdate:YES];
+        
     } completion:^(_Nullable id<BLDataDiff> diff) {
         if ([self.observer respondsToSelector:@selector(dataProvider:didUpdateWithEvent:)]) {
             [self.observer dataProvider:self didUpdateWithEvent:event];
@@ -123,6 +151,8 @@
         if (callbacks.completionBlock) {
             callbacks.completionBlock();
         }
+        
+        [self callListenersWithEvent:event willUpdate:NO];
         
         [self dequeueEventIfPossible];
     }];
@@ -138,6 +168,18 @@
     }
     
     return processor;
+}
+
+- (void)callListenersWithEvent:(BLDataEvent *)event willUpdate:(BOOL)willUpdate {
+    if (willUpdate) {
+        for (BLDataProviderListenerBlock listener in self.willUpdateListeners.allValues) {
+            listener(event);
+        }
+    } else {
+        for (BLDataProviderListenerBlock listener in self.didUpdateListeners.allValues) {
+            listener(event);
+        }
+    }
 }
 
 @end

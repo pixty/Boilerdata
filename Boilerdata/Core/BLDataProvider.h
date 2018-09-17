@@ -8,11 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
+@class BLDataEvent;
 @protocol BLData;
 @protocol BLDataObserver;
 
 NS_ASSUME_NONNULL_BEGIN
 
+
+typedef void (^BLDataProviderListenerBlock)(BLDataEvent *event);
 
 @protocol BLDataProvider <NSObject>
 
@@ -21,6 +24,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, weak) id<BLDataObserver> observer;
 
 @property (nonatomic, assign, getter = isLocked) BOOL locked;
+
+- (id)addWillUpdateListener:(BLDataProviderListenerBlock)listener;
+- (id)addDidUpdateListener:(BLDataProviderListenerBlock)listener;
+- (void)removeListenerWithToken:(id)token;
 
 @end
 
