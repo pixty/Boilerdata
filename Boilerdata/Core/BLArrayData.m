@@ -19,7 +19,7 @@
     return [self initWithItems:nil];
 }
 
-- (instancetype)initWithItems:(NSArray<id<BLDataItem>> *)items {
+- (instancetype)initWithItems:(nullable NSArray<id<BLDataItem>> *)items {
     self = [super init];
     if (!self) return nil;
     

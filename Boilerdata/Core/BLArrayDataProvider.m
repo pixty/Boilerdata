@@ -12,17 +12,17 @@
 
 @implementation BLArrayDataProvider
 
-- (void)updateWithItems:(NSArray<id<BLDataItem>> *)items {
+- (void)updateWithItems:(nullable NSArray<id<BLDataItem>> *)items {
     [self updateWithItems:items updatedItemIds:nil context:nil];
 }
 
-- (void)updateWithItems:(NSArray<id<BLDataItem>> *)items updatedItemIds:(NSSet<id<BLDataItemId>> *)updatedItemIds {
+- (void)updateWithItems:(nullable NSArray<id<BLDataItem>> *)items updatedItemIds:(nullable NSSet<id<BLDataItemId>> *)updatedItemIds {
     [self updateWithItems:items updatedItemIds:updatedItemIds context:nil];
 }
 
-- (void)updateWithItems:(NSArray<id<BLDataItem>> *)items
-         updatedItemIds:(NSSet<id<BLDataItemId>> *)precalculatedUpdatedItemIds
-                context:(NSDictionary *)context {
+- (void)updateWithItems:(nullable NSArray<id<BLDataItem>> *)items
+         updatedItemIds:(nullable NSSet<id<BLDataItemId>> *)precalculatedUpdatedItemIds
+                context:(nullable NSDictionary *)context {
     BLArrayData *newData = [[BLArrayData alloc] initWithItems:items];
     [self updateWithData:newData updatedItemIds:precalculatedUpdatedItemIds context:context];
 }

@@ -12,7 +12,7 @@
 
 #pragma mark - Init
 
-- (instancetype)initWithItems:(NSArray<id<BLDataItem>> *)items sectionItem:(id<BLDataItem>)sectionItem {
+- (instancetype)initWithItems:(NSArray<id<BLDataItem>> *)items sectionItem:(nullable id<BLDataItem>)sectionItem {
     self = [super init];
     if (!self) return nil;
 

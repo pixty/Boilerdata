@@ -20,7 +20,7 @@
     return [self initWithSections:nil];
 }
 
-- (instancetype)initWithSections:(NSArray<id<BLDataSection>> *)sections {
+- (instancetype)initWithSections:(nullable NSArray<id<BLDataSection>> *)sections {
     self = [super init];
     if (!self) return nil;
     

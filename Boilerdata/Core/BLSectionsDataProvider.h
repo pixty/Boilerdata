@@ -16,11 +16,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface BLSectionsDataProvider : BLBasicDataProvider
 
-- (void)updateWithSections:(NSArray<id<BLDataSection>> *)sections;
+- (void)updateWithSections:(nullable NSArray<id<BLDataSection>> *)sections;
 
-- (void)updateWithSections:(NSArray<id<BLDataSection>> *)sections updatedItemIds:(nullable NSSet<id<BLDataItemId>> *)updatedItemIds;
+- (void)updateWithSections:(nullable NSArray<id<BLDataSection>> *)sections updatedItemIds:(nullable NSSet<id<BLDataItemId>> *)updatedItemIds;
 
-- (void)updateWithSections:(NSArray<id<BLDataSection>> *)sections
+- (void)updateWithSections:(nullable NSArray<id<BLDataSection>> *)sections
             updatedItemIds:(nullable NSSet<id<BLDataItemId>> *)updatedItemIds
                    context:(nullable NSDictionary *)context;
 
