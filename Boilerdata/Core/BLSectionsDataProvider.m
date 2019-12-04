@@ -17,7 +17,7 @@
 }
 
 - (void)updateWithSections:(nullable NSArray<id<BLDataSection>> *)sections updatedItemIds:(nullable NSSet<id<BLDataItemId>> *)updatedItemIds {
-    [self updateWithSections:sections updatedItemIds:nil context:nil];
+    [self updateWithSections:sections updatedItemIds:updatedItemIds context:nil];
 }
 
 - (void)updateWithSections:(nullable NSArray<id<BLDataSection>> *)sections
