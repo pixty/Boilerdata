@@ -40,7 +40,7 @@
 
 - (BOOL)shouldForceReloadData {
     // Performing animations offscreen is a heavy performance hit
-    return self.collectionView.window == nil;
+    return self.collectionView.window == nil || CGRectIsEmpty(self.collectionView.bounds);
 }
 
 - (void)reloadData {

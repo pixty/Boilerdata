@@ -43,7 +43,7 @@
 
 - (BOOL)shouldForceReloadData {
     // Performing animations offscreen is a heavy performance hit
-    return self.tableView.window == nil;
+    return self.tableView.window == nil || CGRectIsEmpty(self.tableView.bounds);
 }
 
 - (void)reloadData {
