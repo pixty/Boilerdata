@@ -10,17 +10,15 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-
+NS_SWIFT_NAME(BLDataItemID)
 @protocol BLDataItemId <NSObject, NSCopying>
 
 @end
 
-
 @protocol BLDataItem <NSObject>
 
-@property (nonatomic, readonly) id<BLDataItemId> itemId;
+@property (nonatomic, readonly) id<BLDataItemId> itemId NS_SWIFT_NAME(itemID);
 
 @end
-
 
 NS_ASSUME_NONNULL_END
