@@ -16,7 +16,7 @@
 #import "BLMutableDataDiffChange.h"
 #import "BLDataUtils.h"
 
-#import <NNArrayDiff/ArrayDiff.h>
+@import NNArrayDiff;
 #import "NNArrayDiff+BLDataDiff.h"
 #import "NNSectionsDiff+BLDataDiff.h"
 
