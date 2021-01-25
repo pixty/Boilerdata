@@ -6,7 +6,7 @@
 //  Copyright © 2016 Pixty. All rights reserved.
 //
 
-#import "BLBasicDataProvider.h"
+#import <Boilerdata/BLBasicDataProvider.h>
 
 @protocol BLDataItem;
 @protocol BLDataItemId;

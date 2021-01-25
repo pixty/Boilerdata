@@ -6,7 +6,7 @@
 //  Copyright © 2016 Pixty. All rights reserved.
 //
 
-#import "BLDataProvider.h"
+#import <Boilerdata/BLDataProvider.h>
 
 NS_ASSUME_NONNULL_BEGIN
 

@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "BLDataDiffChange.h"
+#import <Boilerdata/BLDataDiffChange.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
