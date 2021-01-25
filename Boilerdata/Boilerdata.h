@@ -39,7 +39,7 @@ FOUNDATION_EXPORT const unsigned char BoilerdataVersionString[];
 #import <Boilerdata/BLSectionsDataProvider.h>
 #import <Boilerdata/BLFilterDataProvider.h>
 #import <Boilerdata/BLClassificationDataProvider.h>
-
+#import <Boilerdata/BLAbstractDataProvider+Subclassing.h>
 
 // Data diff
 
@@ -57,6 +57,8 @@ FOUNDATION_EXPORT const unsigned char BoilerdataVersionString[];
 // Extensions
 
 #import <Boilerdata/NSString+BLDataItem.h>
+#import <Boilerdata/NSIndexPath+BLUtils.h>
+#import <Boilderdata/NNSectionsDiff+BLDataDiff.h>
 
 
 // Goodies
