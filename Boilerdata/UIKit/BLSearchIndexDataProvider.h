@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "BLChainDataProvider.h"
+#import <Boilerdata/BLChainDataProvider.h>
 
 NS_ASSUME_NONNULL_BEGIN
 

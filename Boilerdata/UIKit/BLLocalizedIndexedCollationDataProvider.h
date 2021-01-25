@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "BLClassificationDataProvider.h"
+#import <Boilerdata/BLClassificationDataProvider.h>
 
 NS_ASSUME_NONNULL_BEGIN
 

@@ -6,7 +6,7 @@
 //  Copyright © 2016 Pixty. All rights reserved.
 //
 
-#import "BLData.h"
+#import <Boilerdata/BLData.h>
 
 @protocol BLDataSection;
 

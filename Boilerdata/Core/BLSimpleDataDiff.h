@@ -6,7 +6,7 @@
 //  Copyright © 2016 Pixty. All rights reserved.
 //
 
-#import "BLDataDiff.h"
+#import <Boilerdata/BLDataDiff.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
