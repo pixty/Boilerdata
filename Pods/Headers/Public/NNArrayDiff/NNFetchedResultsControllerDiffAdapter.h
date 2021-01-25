@@ -1,1 +1,0 @@
-../../../NNArrayDiff/ArrayDiff/CoreData/NNFetchedResultsControllerDiffAdapter.h
