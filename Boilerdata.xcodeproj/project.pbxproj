@@ -98,7 +98,7 @@
 		0FC7BA6B1CAED664003A2815 /* BLLocalizedIndexedCollationData.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FC7BA691CAED664003A2815 /* BLLocalizedIndexedCollationData.m */; };
 		5579878825BEB6AF0049E0C2 /* ArrayDiff.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5516162F25BE29A8006BD882 /* ArrayDiff.framework */; };
 		5579878925BEB6AF0049E0C2 /* ArrayDiff.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5516162F25BE29A8006BD882 /* ArrayDiff.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		AC4D5C78206ACDAE003D57B5 /* NSString+BLDataItem.h in Headers */ = {isa = PBXBuildFile; fileRef = AC4D5C76206ACDAE003D57B5 /* NSString+BLDataItem.h */; };
+		AC4D5C78206ACDAE003D57B5 /* NSString+BLDataItem.h in Headers */ = {isa = PBXBuildFile; fileRef = AC4D5C76206ACDAE003D57B5 /* NSString+BLDataItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AC4D5C79206ACDAE003D57B5 /* NSString+BLDataItem.m in Sources */ = {isa = PBXBuildFile; fileRef = AC4D5C77206ACDAE003D57B5 /* NSString+BLDataItem.m */; };
 /* End PBXBuildFile section */
 
