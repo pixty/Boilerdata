@@ -96,6 +96,7 @@
 		0FC7BA671CAED32B003A2815 /* BLLocalizedIndexedCollationDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FC7BA651CAED32B003A2815 /* BLLocalizedIndexedCollationDataProvider.m */; };
 		0FC7BA6A1CAED664003A2815 /* BLLocalizedIndexedCollationData.h in Headers */ = {isa = PBXBuildFile; fileRef = 0FC7BA681CAED664003A2815 /* BLLocalizedIndexedCollationData.h */; };
 		0FC7BA6B1CAED664003A2815 /* BLLocalizedIndexedCollationData.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FC7BA691CAED664003A2815 /* BLLocalizedIndexedCollationData.m */; };
+		55771B9025C770C2004BEE32 /* UIKitWorkarounds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 551616A625BE33D2006BD882 /* UIKitWorkarounds.framework */; };
 		5579878825BEB6AF0049E0C2 /* ArrayDiff.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5516162F25BE29A8006BD882 /* ArrayDiff.framework */; };
 		AC4D5C78206ACDAE003D57B5 /* NSString+BLDataItem.h in Headers */ = {isa = PBXBuildFile; fileRef = AC4D5C76206ACDAE003D57B5 /* NSString+BLDataItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AC4D5C79206ACDAE003D57B5 /* NSString+BLDataItem.m in Sources */ = {isa = PBXBuildFile; fileRef = AC4D5C77206ACDAE003D57B5 /* NSString+BLDataItem.m */; };
@@ -217,6 +218,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5579878825BEB6AF0049E0C2 /* ArrayDiff.framework in Frameworks */,
+				55771B9025C770C2004BEE32 /* UIKitWorkarounds.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
