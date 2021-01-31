@@ -58,7 +58,7 @@ FOUNDATION_EXPORT const unsigned char BoilerdataVersionString[];
 
 #import <Boilerdata/NSString+BLDataItem.h>
 #import <Boilerdata/NSIndexPath+BLUtils.h>
-#import <Boilderdata/NNSectionsDiff+BLDataDiff.h>
+#import <Boilerdata/NNSectionsDiff+BLDataDiff.h>
 
 
 // Goodies
