@@ -97,7 +97,6 @@
 		0FC7BA6A1CAED664003A2815 /* BLLocalizedIndexedCollationData.h in Headers */ = {isa = PBXBuildFile; fileRef = 0FC7BA681CAED664003A2815 /* BLLocalizedIndexedCollationData.h */; };
 		0FC7BA6B1CAED664003A2815 /* BLLocalizedIndexedCollationData.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FC7BA691CAED664003A2815 /* BLLocalizedIndexedCollationData.m */; };
 		5579878825BEB6AF0049E0C2 /* ArrayDiff.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5516162F25BE29A8006BD882 /* ArrayDiff.framework */; };
-		5579878925BEB6AF0049E0C2 /* ArrayDiff.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5516162F25BE29A8006BD882 /* ArrayDiff.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		AC4D5C78206ACDAE003D57B5 /* NSString+BLDataItem.h in Headers */ = {isa = PBXBuildFile; fileRef = AC4D5C76206ACDAE003D57B5 /* NSString+BLDataItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AC4D5C79206ACDAE003D57B5 /* NSString+BLDataItem.m in Sources */ = {isa = PBXBuildFile; fileRef = AC4D5C77206ACDAE003D57B5 /* NSString+BLDataItem.m */; };
 /* End PBXBuildFile section */
@@ -111,20 +110,6 @@
 			remoteInfo = Boilerdata;
 		};
 /* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		5579878A25BEB6AF0049E0C2 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				5579878925BEB6AF0049E0C2 /* ArrayDiff.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		016E58E21C3B3EA10087E63A /* Boilerdata.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Boilerdata.h; sourceTree = "<group>"; };
@@ -686,7 +671,6 @@
 				01D57A3D1C524FA9008E4EB5 /* Frameworks */,
 				01D57A3E1C524FA9008E4EB5 /* Headers */,
 				01D57A3F1C524FA9008E4EB5 /* Resources */,
-				5579878A25BEB6AF0049E0C2 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
