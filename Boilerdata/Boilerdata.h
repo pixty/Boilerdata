@@ -19,6 +19,7 @@ FOUNDATION_EXPORT const unsigned char BoilerdataVersionString[];
 
 #import <Boilerdata/BLData.h>
 #import <Boilerdata/BLDataItem.h>
+#import <Boilerdata/BLClassifiedData.h>
 
 #import <Boilerdata/BLDataUtils.h>
 
@@ -39,7 +40,6 @@ FOUNDATION_EXPORT const unsigned char BoilerdataVersionString[];
 #import <Boilerdata/BLSectionsDataProvider.h>
 #import <Boilerdata/BLFilterDataProvider.h>
 #import <Boilerdata/BLClassificationDataProvider.h>
-#import <Boilerdata/BLAbstractDataProvider+Subclassing.h>
 
 // Data diff
 
@@ -70,5 +70,6 @@ FOUNDATION_EXPORT const unsigned char BoilerdataVersionString[];
 
 #import <Boilerdata/Boilerdata+UIKit.h>
 
+// Subclassing
 
-
+#import <Boilerdata/Boilerdata+Subclassing.h>

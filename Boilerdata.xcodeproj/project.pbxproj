@@ -16,7 +16,7 @@
 		01B696841C74C4D400B9AD6E /* BLArrayDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B696531C74C4D400B9AD6E /* BLArrayDataProvider.m */; };
 		01B696871C74C4D400B9AD6E /* BLChainDataProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 01B696561C74C4D400B9AD6E /* BLChainDataProvider.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		01B696881C74C4D400B9AD6E /* BLChainDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B696571C74C4D400B9AD6E /* BLChainDataProvider.m */; };
-		01B696891C74C4D400B9AD6E /* BLChainDataProvider+Subclassing.h in Headers */ = {isa = PBXBuildFile; fileRef = 01B696581C74C4D400B9AD6E /* BLChainDataProvider+Subclassing.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		01B696891C74C4D400B9AD6E /* BLChainDataProvider+Subclassing.h in Headers */ = {isa = PBXBuildFile; fileRef = 01B696581C74C4D400B9AD6E /* BLChainDataProvider+Subclassing.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		01B6968A1C74C4D400B9AD6E /* BLData.h in Headers */ = {isa = PBXBuildFile; fileRef = 01B696591C74C4D400B9AD6E /* BLData.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		01B6968B1C74C4D400B9AD6E /* BLDataDiff.h in Headers */ = {isa = PBXBuildFile; fileRef = 01B6965A1C74C4D400B9AD6E /* BLDataDiff.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		01B6968C1C74C4D400B9AD6E /* BLDataDiffCalculator.h in Headers */ = {isa = PBXBuildFile; fileRef = 01B6965B1C74C4D400B9AD6E /* BLDataDiffCalculator.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -24,7 +24,7 @@
 		01B6968E1C74C4D400B9AD6E /* BLDataDiffChange.h in Headers */ = {isa = PBXBuildFile; fileRef = 01B6965D1C74C4D400B9AD6E /* BLDataDiffChange.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		01B6968F1C74C4D400B9AD6E /* BLDataEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = 01B6965E1C74C4D400B9AD6E /* BLDataEvent.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		01B696901C74C4D400B9AD6E /* BLDataEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B6965F1C74C4D400B9AD6E /* BLDataEvent.m */; };
-		01B696911C74C4D400B9AD6E /* BLDataEventCallbacks.h in Headers */ = {isa = PBXBuildFile; fileRef = 01B696601C74C4D400B9AD6E /* BLDataEventCallbacks.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		01B696911C74C4D400B9AD6E /* BLDataEventCallbacks.h in Headers */ = {isa = PBXBuildFile; fileRef = 01B696601C74C4D400B9AD6E /* BLDataEventCallbacks.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		01B696921C74C4D400B9AD6E /* BLDataEventCallbacks.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B696611C74C4D400B9AD6E /* BLDataEventCallbacks.m */; };
 		01B696931C74C4D400B9AD6E /* BLDataEventProcessor.h in Headers */ = {isa = PBXBuildFile; fileRef = 01B696621C74C4D400B9AD6E /* BLDataEventProcessor.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		01B696941C74C4D400B9AD6E /* BLDataItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 01B696631C74C4D400B9AD6E /* BLDataItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -52,11 +52,11 @@
 		01B696AC1C74C4D400B9AD6E /* NNSectionsDiffChange+BLDataDiffChange.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B6967B1C74C4D400B9AD6E /* NNSectionsDiffChange+BLDataDiffChange.m */; };
 		01B696AD1C74C4D400B9AD6E /* NSIndexPath+BLUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 01B6967C1C74C4D400B9AD6E /* NSIndexPath+BLUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		01B696AE1C74C4D400B9AD6E /* NSIndexPath+BLUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B6967D1C74C4D400B9AD6E /* NSIndexPath+BLUtils.m */; };
-		01B696C01C74CB6600B9AD6E /* BLProxyData.h in Headers */ = {isa = PBXBuildFile; fileRef = 01B696BE1C74CB6600B9AD6E /* BLProxyData.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		01B696C01C74CB6600B9AD6E /* BLProxyData.h in Headers */ = {isa = PBXBuildFile; fileRef = 01B696BE1C74CB6600B9AD6E /* BLProxyData.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		01B696C11C74CB6600B9AD6E /* BLProxyData.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B696BF1C74CB6600B9AD6E /* BLProxyData.m */; };
 		01B696C51C74DCC900B9AD6E /* BLEmptyData.h in Headers */ = {isa = PBXBuildFile; fileRef = 01B696C31C74DCC900B9AD6E /* BLEmptyData.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		01B696C61C74DCC900B9AD6E /* BLEmptyData.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B696C41C74DCC900B9AD6E /* BLEmptyData.m */; };
-		01B696C91C74F3E400B9AD6E /* Boilerdata+Subclassing.h in Headers */ = {isa = PBXBuildFile; fileRef = 01B696C81C74F3E400B9AD6E /* Boilerdata+Subclassing.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		01B696C91C74F3E400B9AD6E /* Boilerdata+Subclassing.h in Headers */ = {isa = PBXBuildFile; fileRef = 01B696C81C74F3E400B9AD6E /* Boilerdata+Subclassing.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		01B696CA1C74F60A00B9AD6E /* Boilerdata.h in Headers */ = {isa = PBXBuildFile; fileRef = 016E58E21C3B3EA10087E63A /* Boilerdata.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		01B696D41C74F64400B9AD6E /* BLUICollectionViewReloaderEngine.h in Headers */ = {isa = PBXBuildFile; fileRef = 01B696CB1C74F64400B9AD6E /* BLUICollectionViewReloaderEngine.h */; };
 		01B696D51C74F64400B9AD6E /* BLUICollectionViewReloaderEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B696CC1C74F64400B9AD6E /* BLUICollectionViewReloaderEngine.m */; };
@@ -77,7 +77,7 @@
 		01B697381C765F9300B9AD6E /* BLClassificationDataProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 01B697361C765F9300B9AD6E /* BLClassificationDataProvider.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		01B697391C765F9300B9AD6E /* BLClassificationDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B697371C765F9300B9AD6E /* BLClassificationDataProvider.m */; };
 		01B6973C1C7686AF00B9AD6E /* BLIndexPathMapping.h in Headers */ = {isa = PBXBuildFile; fileRef = 01B6973B1C7686AF00B9AD6E /* BLIndexPathMapping.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		01B697401C77674700B9AD6E /* BLClassifiedData.h in Headers */ = {isa = PBXBuildFile; fileRef = 01B6973E1C77674700B9AD6E /* BLClassifiedData.h */; };
+		01B697401C77674700B9AD6E /* BLClassifiedData.h in Headers */ = {isa = PBXBuildFile; fileRef = 01B6973E1C77674700B9AD6E /* BLClassifiedData.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		01B697411C77674700B9AD6E /* BLClassifiedData.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B6973F1C77674700B9AD6E /* BLClassifiedData.m */; };
 		01B697451C776F7A00B9AD6E /* NNArrayDiff+BLDataDiff.h in Headers */ = {isa = PBXBuildFile; fileRef = 01B697431C776F7A00B9AD6E /* NNArrayDiff+BLDataDiff.h */; };
 		01B697461C776F7A00B9AD6E /* NNArrayDiff+BLDataDiff.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B697441C776F7A00B9AD6E /* NNArrayDiff+BLDataDiff.m */; };
@@ -91,7 +91,7 @@
 		0F5E5ECD1CA04C9C0025B114 /* BLSectionsDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F5E5ECB1CA04C9C0025B114 /* BLSectionsDataProvider.m */; };
 		0F5E5ED61CA063C50025B114 /* BLBasicDataProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 0F5E5ED41CA063C50025B114 /* BLBasicDataProvider.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0F5E5ED71CA063C50025B114 /* BLBasicDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F5E5ED51CA063C50025B114 /* BLBasicDataProvider.m */; };
-		0F5E5EDA1CA064560025B114 /* BLBasicDataProvider+Subclassing.h in Headers */ = {isa = PBXBuildFile; fileRef = 0F5E5ED81CA064560025B114 /* BLBasicDataProvider+Subclassing.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		0F5E5EDA1CA064560025B114 /* BLBasicDataProvider+Subclassing.h in Headers */ = {isa = PBXBuildFile; fileRef = 0F5E5ED81CA064560025B114 /* BLBasicDataProvider+Subclassing.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0FC7BA661CAED32B003A2815 /* BLLocalizedIndexedCollationDataProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 0FC7BA641CAED32B003A2815 /* BLLocalizedIndexedCollationDataProvider.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0FC7BA671CAED32B003A2815 /* BLLocalizedIndexedCollationDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FC7BA651CAED32B003A2815 /* BLLocalizedIndexedCollationDataProvider.m */; };
 		0FC7BA6A1CAED664003A2815 /* BLLocalizedIndexedCollationData.h in Headers */ = {isa = PBXBuildFile; fileRef = 0FC7BA681CAED664003A2815 /* BLLocalizedIndexedCollationData.h */; };
