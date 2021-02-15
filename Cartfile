@@ -1,1 +1,1 @@
-git "file:///Users/andrey/ArrayDiff/" "feature/carthage"
+git "https://github.com/joomcode/ArrayDiff" "feature/carthage"
