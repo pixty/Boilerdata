@@ -15,11 +15,3 @@ echo 'EXCLUDED_ARCHS = $(inherited) $(EXCLUDED_ARCHS__EFFECTIVE_PLATFORM_SUFFIX_
 
 export XCODE_XCCONFIG_FILE="$xcconfig"
 carthage "$@"
-
-if [[ "$@" =~ checkout.* ]] || [[ "$@" =~ bootstrap.* ]] || [[ "$@" =~ update.* ]] ; then
-	swift run --package-path $( pwd -P )/../../Joom/Scripts/CLI Carthage --checkouts-path Carthage/Checkouts
-fi
-
-if [[ "$@" =~ update.* ]] || [[ "$@" =~ bootstrap.* ]] then
-	echo "Build dependencies again!"
-fi
