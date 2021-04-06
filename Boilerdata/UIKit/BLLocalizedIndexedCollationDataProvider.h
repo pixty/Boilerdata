@@ -11,7 +11,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-typedef NSString * _Nonnull (^BLDataItemStringifierBlock)(id<BLDataItem> dataItem);
+typedef NSString * _Nonnull (^BLDataItemStringifierBlock)(__kindof id<BLDataItem> dataItem);
 
 @interface BLLocalizedIndexedCollationDataProvider : BLClassificationDataProvider
 
