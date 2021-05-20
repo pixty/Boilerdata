@@ -67,9 +67,16 @@
 - (void)applyEvent:(BLDataEvent *)event withDataUpdateBlock:(void (^)(void))dataUpdateBlock completion:(BLDataEventProcessorCompletion)completion {
     if ([self shouldUseReloadDataForEvent:event]) {
         dataUpdateBlock();
+
         // TODO: we need a callback here
         [self.engine reloadData];
+
+        if (self.didReloadDataBlock != nil) {
+            self.didReloadDataBlock([self.engine shouldForceReloadData]);
+        }
+
         completion(nil);
+
         return;
     }
     
