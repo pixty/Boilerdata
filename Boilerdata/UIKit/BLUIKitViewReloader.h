@@ -15,6 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 typedef void (^BLCellUpdateBlock)(id cell, NSIndexPath *indexPath);
+typedef void (^BLUIKitViewReloaderDidReloadDataBlock)(BOOL forceReloadedByEngine);
 
 
 @interface BLUIKitViewReloader : NSObject <BLDataEventProcessor>
@@ -27,6 +28,7 @@ typedef void (^BLCellUpdateBlock)(id cell, NSIndexPath *indexPath);
 @property (nonatomic, assign) BOOL useCellUpdateBlockForReload;
 
 @property (nonatomic, copy, nullable) BLCellUpdateBlock cellUpdateBlock;
+@property (nonatomic, copy, nullable) BLUIKitViewReloaderDidReloadDataBlock didReloadDataBlock;
 
 - (instancetype)initWithTableView:(UITableView *)tableView;
 - (instancetype)initWithTableView:(UITableView *)tableView animations:(nullable BLUITableViewAnimations *)animations;
